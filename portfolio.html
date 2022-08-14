@@ -22,11 +22,8 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="icomoon/style.css" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="css/style.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />
     </head>
     <body>
         <!--хедер-->
@@ -92,7 +89,9 @@
             <!--портфоліо-->
             <section class="section">
                 <div class="container">
-                    <h1 class="title-portfolio">Portfolio</h1>
+                    <h1 class="title-portfolio" data-aos="fade-down">
+                        Portfolio
+                    </h1>
                     <ul class="buttons">
                         <button type="button" class="button">Все</button>
                         <button type="button" class="button">Веб-сайти</button>
@@ -443,7 +442,7 @@
             </div>
         </footer>
         <script src="./js/modal.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
             AOS.init()
         </script>

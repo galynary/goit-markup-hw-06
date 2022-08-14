@@ -20,11 +20,8 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
         />
         <link rel="stylesheet" href="icomoon/style.css" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="css/style.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />
     </head>
     <body>
         <!--хедер-->
@@ -93,13 +90,13 @@
             <!--шапка-->
             <section class="studio-hero">
                 <div class="container">
-                    <h1 class="studio-title">
+                    <h1 class="studio-title" data-aos="fade-down">
                         Ефективне рішення для вашого бізнесу
                     </h1>
                     <button data-modal-open type="button" class="btn-primary">
                         Замовити послугу
                     </button>
-                    <!--   <div class="backdrop is-hidden" data-modal>
+                    <div class="backdrop is-hidden" data-modal>
                         <div class="modal" data-modal="">
                             <button
                                 data-modal-close
@@ -118,13 +115,15 @@
                             </button>
                             <div class="backrounnd-icon"></div>
                         </div>
-                    </div>-->
+                    </div>
                 </div>
             </section>
             <!--переваги-->
             <section class="section section-advantages">
                 <div class="container">
-                    <h2 class="section-title-advantages">Наші переваги</h2>
+                    <h2 class="section-title-advantages" data-aos="fade-down">
+                        Наші переваги
+                    </h2>
                     <ul class="list-advantages list">
                         <li class="advantages-item icon1">
                             <div class="advantages-image icon1">
@@ -204,7 +203,9 @@
             <!--наша работа-->
             <section class="section section-work">
                 <div class="container">
-                    <h2 class="section-title">Чим ми займаємося</h2>
+                    <h2 class="section-title" data-aos="fade-down">
+                        Чим ми займаємося
+                    </h2>
                     <ul class="list list-work">
                         <li class="work-item">
                             <img
@@ -239,7 +240,9 @@
             <!--команда-->
             <section class="section section-team">
                 <div class="container">
-                    <h2 class="section-title">Наша команда</h2>
+                    <h2 class="section-title" data-aos="fade-down">
+                        Наша команда
+                    </h2>
                     <ul class="list-team list">
                         <li class="item-team">
                             <img
@@ -525,10 +528,16 @@
             </section>
             <section class="section section-clients">
                 <div class="container">
-                    <h1 class="section-title">Постійні клієнти</h1>
+                    <h2 class="section-title" data-aos="fade-down">
+                        Постійні клієнти
+                    </h2>
                     <ul class="clients-list list">
                         <li class="clients-item logo1">
-                            <a href="" class="clients-link link">
+                            <a
+                                href=""
+                                class="clients-link link"
+                                data-aos="flip-up"
+                            >
                                 <svg
                                     class="icon-clients"
                                     width="106px"
@@ -541,7 +550,11 @@
                             </a>
                         </li>
                         <li class="clients-item logo1">
-                            <a href="" class="clients-link link">
+                            <a
+                                href=""
+                                class="clients-link link"
+                                data-aos="flip-up"
+                            >
                                 <svg
                                     class="icon-clients"
                                     width="106px"
@@ -554,7 +567,11 @@
                             </a>
                         </li>
                         <li class="clients-item logo1">
-                            <a href="" class="clients-link link">
+                            <a
+                                href=""
+                                class="clients-link link"
+                                data-aos="flip-up"
+                            >
                                 <svg
                                     class="icon-clients"
                                     width="106px"
@@ -567,7 +584,11 @@
                             </a>
                         </li>
                         <li class="clients-item logo1">
-                            <a href="" class="clients-link link">
+                            <a
+                                href=""
+                                class="clients-link link"
+                                data-aos="flip-up"
+                            >
                                 <svg
                                     class="icon-clients"
                                     width="106px"
@@ -580,7 +601,11 @@
                             </a>
                         </li>
                         <li class="clients-item logo1">
-                            <a href="" class="clients-link link">
+                            <a
+                                href=""
+                                class="clients-link link"
+                                data-aos="flip-up"
+                            >
                                 <svg
                                     class="icon-clients"
                                     width="106px"
@@ -593,7 +618,11 @@
                             </a>
                         </li>
                         <li class="clients-item logo1">
-                            <a href="" class="clients-link link">
+                            <a
+                                href=""
+                                class="clients-link link"
+                                data-aos="flip-up"
+                            >
                                 <svg
                                     class="icon-clients"
                                     width="106px"
@@ -706,9 +735,11 @@
             </div>
         </footer>
         <script src="./js/modal.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
-            AOS.init()
+            AOS.init({
+                duration: 1000,
+            })
         </script>
     </body>
 </html>
