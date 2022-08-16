@@ -34,17 +34,23 @@
 
                     <ul class="header-navigation list">
                         <li class="list-item">
-                            <a class="header-link link" href="index.html"
+                            <a
+                                class="header-link current link"
+                                href="index.html"
                                 >Студія</a
                             >
                         </li>
                         <li class="list-item">
-                            <a class="header-link link" href="portfolio.html"
+                            <a
+                                class="header-link current link"
+                                href="portfolio.html"
                                 >Портфоліо</a
                             >
                         </li>
                         <li class="list-item">
-                            <a class="header-link link" href="">Контакти</a>
+                            <a class="header-link current link" href=""
+                                >Контакти</a
+                            >
                         </li>
                     </ul>
 
@@ -96,6 +102,7 @@
                     <button data-modal-open type="button" class="btn-primary">
                         Замовити послугу
                     </button>
+                    <!--модальне вікно-->
                     <div class="backdrop is-hidden" data-modal>
                         <div class="modal" data-modal="">
                             <button
@@ -114,6 +121,90 @@
                                 </svg>
                             </button>
                             <div class="backrounnd-icon"></div>
+                            <h2 class="title-form">
+                                Залиште свої дані, ми вам передзвонимо
+                            </h2>
+                            <form class="js-speaker-form">
+                                <ul class="form-list">
+                                    <li class="item-form">
+                                        <label for="name" class="form-label"
+                                            >Ім'я</label
+                                        >
+                                        <input
+                                            class="form-input"
+                                            type="text"
+                                            name="name"
+                                            id="name"
+                                            autofocus
+                                            required
+                                            minlength="6"
+                                            maxlength="12"
+                                        />
+                                    </li>
+                                    <li class="item-form">
+                                        <label for="tel" class="form-label"
+                                            >Телефон</label
+                                        >
+                                        <input
+                                            class="form-input"
+                                            type="tel"
+                                            name="tel"
+                                            id="tel"
+                                            autocomplete
+                                            required
+                                            minlength="6"
+                                            maxlength="12"
+                                        />
+                                        <!--<p class="error">Поле не заповнене</p>-->
+                                    </li>
+                                    <li class="item-form">
+                                        <label for="mail" class="form-label"
+                                            >Пошта</label
+                                        >
+                                        <input
+                                            class="form-input"
+                                            type="mail"
+                                            name="mail"
+                                            id="mail"
+                                            placeholder=""
+                                            required
+                                            minlength="6"
+                                            maxlength="12"
+                                        />
+                                    </li>
+                                    <li class="item-form">
+                                        <label for="comment" class="form-label"
+                                            >Коментар</label
+                                        >
+                                        <textarea
+                                            class="form-textarea"
+                                            name="comment"
+                                            id="comment"
+                                            rows="10"
+                                            placeholder="Введіть текст"
+                                            required
+                                            minlength="6"
+                                            maxlength="100"
+                                        ></textarea>
+                                    </li>
+                                </ul>
+                            </form>
+                            <div class="checkbox-form">
+                                <input
+                                    type="checkbox"
+                                    name="policy"
+                                    id="policy"
+                                />
+                                <label for="policy" class="checkbox-label"
+                                    >Погоджуюся з розсилкою та приймаю
+                                    <a href="" class="form-link link">
+                                        Умови договору</a
+                                    ></label
+                                >
+                            </div>
+                            <button type="submit" class="buttton-form">
+                                Відправити
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -208,31 +299,40 @@
                     </h2>
                     <ul class="list list-work">
                         <li class="work-item">
-                            <img
-                                class="work-img"
-                                src="./images/studio/work/box1.jpg"
-                                width="370"
-                                height="294"
-                                alt="клавіатура і планшет"
-                            />
+                            <div class="overlay-work">
+                                <img
+                                    class="work-img"
+                                    src="./images/studio/work/box1.jpg"
+                                    width="370"
+                                    height="294"
+                                    alt="клавіатура і планшет"
+                                />
+                                <p class="text-work">Десктопні додатки</p>
+                            </div>
                         </li>
                         <li class="work-item">
-                            <img
-                                class="work-img"
-                                src="./images/studio/work/box2.jpg"
-                                width="370"
-                                height="294"
-                                alt="мобільний телефон і ноутбук"
-                            />
+                            <div class="overlay-work">
+                                <img
+                                    class="work-img"
+                                    src="./images/studio/work/box2.jpg"
+                                    width="370"
+                                    height="294"
+                                    alt="мобільний телефон і ноутбук"
+                                />
+                                <p class="text-work">Мобільні додатки</p>
+                            </div>
                         </li>
                         <li class="work-item">
-                            <img
-                                class="work-img"
-                                src="./images/studio/work/box3.jpg"
-                                width="370"
-                                height="294"
-                                alt="планшет у руці"
-                            />
+                            <div class="overlay-work">
+                                <img
+                                    class="work-img"
+                                    src="./images/studio/work/box3.jpg"
+                                    width="370"
+                                    height="294"
+                                    alt="планшет у руці"
+                                />
+                                <p class="text-work">Дизайнерські рішення</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -741,5 +841,17 @@
                 duration: 1000,
             })
         </script>
+        <!-- <script>
+            ;(() => {
+                document
+                    .guerySelector('.js-speaker-form')
+                    .addEventListener('submit', (e) => {
+                        e.preventDefault()
+                        new FormData(e.currentTarget).forEach((value, name) =>
+                            console.log('${name}: ${value}')
+                        )
+                    })
+            })()
+        </script>-->
     </body>
 </html>
