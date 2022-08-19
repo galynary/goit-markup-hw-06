@@ -207,7 +207,7 @@ body {
     border-radius: 4px;
     width: 528px;
     height: auto;
-    padding: 39px;
+    padding: 40px;
     margin: 0 auto;
     background-color: #ffffff;
     z-index: 2;
@@ -220,10 +220,20 @@ body {
     justify-content: center;
     border: none;
     cursor: pointer;
+    margin: 0 auto;
     top: 8px;
     right: 8px;
     width: 30px;
     height: 30px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    transition: backround-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close:hover + .icon-close,
+.modal-close:focus + .icon-close {
+    fill: var(--accent-color);
 }
 
 .icon-close {
@@ -233,10 +243,15 @@ body {
     display: inline-block;
     cursor: pointer;
     fill: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    padding-top: 5px;
-    padding-left: 5px;
+    padding-top: 6px;
+    padding-left: 6px;
+    background-size: contain;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon-close:focus {
+    fill: var(--accent-color);
 }
 
 /*.backdrop.is-hidden {
@@ -280,13 +295,13 @@ body {
 }
 .item-form {
     display: flex;
+    position: relative;
     flex-direction: column;
-    margin-bottom: 28px;
-    border: none;
+    margin-bottom: 12px;
 }
 
 .form-label {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.16;
@@ -294,11 +309,36 @@ body {
     color: #757575;
     text-align: left;
 }
-.item-form input {
+.input:focus {
+    border: 1px solid rgba(33, 150, 243);
+}
+.form-input {
+    position: relative;
+}
+
+.input:focus + .icon-input {
+    fill: rgba(33, 150, 243);
+    border-color: rgba(33, 150, 243);
+}
+.input {
+    width: 100%;
+    height: 100%;
+    padding: 14px 14px;
+    padding-left: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    padding: 14px;
-    margin: 0;
+}
+.icon-label {
+    position: absolute;
+}
+.icon-input {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    display: inline-block;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .error {
     font-weight: 400;
@@ -307,15 +347,15 @@ body {
     letter-spacing: 0.01em;
     color: rgb(239, 154, 154);
 }
-.form-input autofocus {
-    border-color: #2196f3;
+
+.input:focus {
+    border: 1px solid rgba(33, 150, 243);
+}
+.icon {
+    position: absolute;
+    fill: rgba(33, 33, 33, 100);
 }
 
-.form-input:hover,
-.form-input:focus {
-    border: 1px solid #2196f3;
-    border-radius: 4px;
-}
 .form-textarea {
     width: 100%;
     height: 120px;
@@ -323,6 +363,9 @@ body {
     resize: none;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+}
+.form-textarea:focus {
+    border: 1px solid rgba(33, 150, 243);
 }
 .form-textarea::placeholder {
     font-weight: 400;
@@ -340,14 +383,31 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 35px;
+    margin-bottom: 34px;
 }
-.checkbox-form input[type='checkbox'] {
+.checkbox-icon {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
     width: 16px;
     height: 16px;
+    background-color: #fff;
+    border: 1px solid #212121;
+    margin-right: 7px;
+}
+.checkbox:checked + .checkbox-icon {
     background-color: #2196f3;
+    border-radius: 2px;
+    border-color: transparent;
+    background-image: url('../images/icons.svg/icon\ check.svg');
+    background-size: contain;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .checkbox-label {
+    align-items: center;
+    justify-content: center;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
@@ -359,7 +419,22 @@ body {
     color: #2196f3;
     text-decoration: underline;
 }
+.checkbox {
+    /*   -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;*/
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 .buttton-form {
+    position: relative;
     width: 216px;
     height: 50px;
     background: #2196f3;
