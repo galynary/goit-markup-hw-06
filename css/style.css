@@ -196,7 +196,7 @@ body {
 }
 /*--модальне вікно--*/
 .modal {
-    display: block;
+    display: inline-block;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -210,15 +210,14 @@ body {
     padding: 40px;
     margin: 0 auto;
     background-color: #ffffff;
-    z-index: 2;
-}
-
-.modal-close {
-    position: absolute;
-    display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: none;
+    z-index: 2;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-modal {
+    position: absolute;
     cursor: pointer;
     margin: 0 auto;
     top: 8px;
@@ -231,8 +230,8 @@ body {
     transition: backround-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-close:hover + .icon-close,
-.modal-close:focus + .icon-close {
+.btn-modal:hover + .icon-close,
+.btn-modal:focus + .icon-close {
     fill: var(--accent-color);
 }
 
@@ -242,27 +241,28 @@ body {
     justify-content: center;
     display: inline-block;
     cursor: pointer;
-    fill: rgba(0, 0, 0, 0.2);
-    padding-top: 6px;
-    padding-left: 6px;
+    fill: #000;
+    transform: translate(-50%, -50%);
     background-size: contain;
     background-origin: border-box;
     background-repeat: no-repeat;
     background-position: center;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.icon-close:focus {
-    fill: var(--accent-color);
+.btn-modal:hover + .icon-close,
+.btn-modal:focus + .icon-close {
+    fill: rgba(33, 150, 243);
 }
 
-/*.backdrop.is-hidden {
+.backdrop.is-hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-}*/
+}
 .backdrop {
     position: fixed;
     opacity: 1;
-    transition: opacity 250ms;
     top: 0;
     left: 0;
     width: 100%;
@@ -309,16 +309,13 @@ body {
     color: #757575;
     text-align: left;
 }
-.input:focus {
-    border: 1px solid rgba(33, 150, 243);
-}
+
 .form-input {
     position: relative;
 }
 
 .input:focus + .icon-input {
     fill: rgba(33, 150, 243);
-    border-color: rgba(33, 150, 243);
 }
 .input {
     width: 100%;
@@ -327,6 +324,7 @@ body {
     padding-left: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-label {
     position: absolute;
@@ -349,7 +347,8 @@ body {
 }
 
 .input:focus {
-    border: 1px solid rgba(33, 150, 243);
+    outline: 1px solid rgba(33, 150, 243);
+    border: transparent;
 }
 .icon {
     position: absolute;
@@ -365,7 +364,8 @@ body {
     border-radius: 4px;
 }
 .form-textarea:focus {
-    border: 1px solid rgba(33, 150, 243);
+    outline: 1px solid rgba(33, 150, 243);
+    border: transparent;
 }
 .form-textarea::placeholder {
     font-weight: 400;
@@ -443,8 +443,9 @@ body {
     font-size: 16px;
     font-weight: 700;
     color: #fff;
+    transform: translate(0% 50%);
     align-items: center;
-    text-align: center;
+    justify-content: center;
     letter-spacing: 0.06em;
     text-align: center;
     line-height: 1.8;
@@ -452,8 +453,9 @@ body {
     display: inline-block;
     border: 1px solid transparent;
     overflow: hidden;
-    transition: backround-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*--портфоліо--*/
@@ -616,9 +618,10 @@ body {
 .footer-iner {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
 }
 .footer-icons {
-    margin-left: 94px;
+    /*  margin-left: 94px;*/
 }
 .footer-title {
     color: #fff;
