@@ -287,7 +287,7 @@ body {
     text-align: center;
     letter-spacing: 0.03em;
     color: #212121;
-    margin-bottom: 17px;
+    margin-bottom: 12px;
 }
 .form-list {
     display: block;
@@ -299,6 +299,9 @@ body {
     display: flex;
     position: relative;
     flex-direction: column;
+}
+
+.item-form:not(:last-child) {
     margin-bottom: 12px;
 }
 
@@ -349,8 +352,7 @@ body {
 }
 
 .input:focus {
-    outline: 1px solid rgba(33, 150, 243);
-    border: transparent;
+    border-color: rgba(33, 150, 243);
 }
 .icon {
     position: absolute;
@@ -366,8 +368,7 @@ body {
     border-radius: 4px;
 }
 .form-textarea:focus {
-    outline: 1px solid rgba(33, 150, 243);
-    border: transparent;
+    border-color: rgba(33, 150, 243);
 }
 .form-textarea::placeholder {
     font-weight: 400;
@@ -385,7 +386,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 34px;
+    margin-bottom: 30px;
 }
 .checkbox-icon {
     display: inline-block;
@@ -395,12 +396,12 @@ body {
     width: 16px;
     height: 16px;
     background-color: #fff;
-    border: 1px solid #212121;
+    border: 2px solid #212121;
     margin-right: 7px;
+    border-radius: 2px;
 }
 .checkbox:checked + .checkbox-icon {
     background-color: #2196f3;
-    border-radius: 2px;
     border-color: transparent;
     background-image: url('../images/icons.svg/icon\ check.svg');
     background-size: contain;
@@ -410,7 +411,6 @@ body {
 }
 .checkbox-label {
     display: flex;
-    margin-bottom: 34px;
     align-items: center;
     justify-content: center;
     font-weight: 400;
@@ -418,7 +418,6 @@ body {
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: #757575;
-    margin-left: 6px;
 }
 .form-link {
     color: #2196f3;
@@ -624,7 +623,13 @@ body {
 .footer-iner {
     display: flex;
     align-items: baseline;
-    justify-content: space-between;
+}
+.footter-address {
+    margin-right: 70px;
+    flex-grow: 1;
+}
+.footer-icons {
+    margin-right: 93px;
 }
 
 .footer-title {
@@ -919,9 +924,6 @@ body {
 .icons-link-footer:hover .icon-team {
     transition: 250ms;
     transform: scale(1.05);
-}
-.footer-form {
-    display: flex;
 }
 .input-footer {
     width: 358px;

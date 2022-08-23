@@ -19,7 +19,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
         />
-        <link rel="stylesheet" href="icomoon/style.css" />
+        <!--  <link rel="stylesheet" href="icomoon/style.css" />-->
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="css/style.css" />
     </head>
@@ -698,14 +698,14 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="subscription">
+                    <div class="footer-form">
                         <h3 class="footer-title">Підпишіться на розсилку</h3>
-                        <div class="footer-form">
+                        <div class="footer-text">
                             <input
                                 class="input-footer"
                                 type="mail"
                                 name="mail"
-                                id="mail"
+                                id="mail-footer"
                                 required
                                 minlength="6"
                                 maxlength="12"
@@ -792,7 +792,7 @@
                                     </svg>
                                 </span>
                             </div>
-                            <!--<p class="error">Поле не заповнене</p>-->
+                            <!--  <p class="error">Поле не заповнене</p>-->
                         </div>
                         <div class="item-form">
                             <label for="mail" class="form-label">Пошта</label>
@@ -832,23 +832,26 @@
                             ></textarea>
                         </div>
                     </div>
+
+                    <div class="checkbox-form">
+                        <label for="policy" class="checkbox-label">
+                            <input
+                                class="checkbox"
+                                type="checkbox"
+                                name="policy"
+                                id="policy"
+                            />
+                            <span class="checkbox-icon"></span>
+                            Погоджуюся з розсилкою та приймаю
+                            <a href="" class="form-link link">
+                                Умови договору</a
+                            ></label
+                        >
+                    </div>
+                    <button type="submit" class="buttton-form">
+                        Відправити
+                    </button>
                 </form>
-                <div class="checkbox-form">
-                    <label for="policy" class="checkbox-label">
-                        <input
-                            class="checkbox"
-                            type="checkbox"
-                            name="policy"
-                            id="policy"
-                        />
-                        <span class="checkbox-icon"></span>
-                        Погоджуюся з розсилкою та приймаю
-                        <a href="" class="form-link link">
-                            Умови договору</a
-                        ></label
-                    >
-                </div>
-                <button type="submit" class="buttton-form">Відправити</button>
             </div>
         </div>
         <script src="./js/modal.js"></script>
@@ -858,7 +861,7 @@
                 duration: 1000,
             })
         </script>
-        <script>
+        <!--  <script>
             ;(() => {
                 document
                     .guerySelector('.js-speaker-form')
@@ -867,6 +870,21 @@
                         new FormData(e.currentTarget).forEach((value, name) =>
                             console.log('${name}: ${value}')
                         )
+                    })
+            })()
+        </script>-->
+        <script>
+            ;(() => {
+                document
+                    .querySelector('.js-speaker-form')
+                    .addEventListener('submit', (e) => {
+                        e.preventDefault()
+
+                        new FormData(e.currentTarget).forEach((value, name) =>
+                            console.log(`${name}: ${value}`)
+                        )
+
+                        e.currentTarget.reset()
                     })
             })()
         </script>
